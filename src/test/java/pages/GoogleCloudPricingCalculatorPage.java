@@ -188,7 +188,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         driver.switchTo().frame(cloudPricingIframe);
 
         addToEstimateButton.click();
-        wait.until(ExpectedConditions.visibilityOf(totalEstimateCost));
 
         driver.switchTo().defaultContent();
         driver.switchTo().defaultContent();
