@@ -26,6 +26,9 @@ public class DriverFactory {
                 break;
             default:
                 driver = new FirefoxDriver();
+                yopMailTab = getDriver().getWindowHandle();
+                getDriver().switchTo().newWindow(WindowType.TAB);
+                googlePricingTab = getDriver().getWindowHandle();
         }
         driver.manage().window().maximize();
     }
