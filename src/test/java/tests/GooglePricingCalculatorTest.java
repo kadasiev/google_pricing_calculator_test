@@ -43,7 +43,7 @@ public class GooglePricingCalculatorTest extends BaseTest{
                 .getEstimateMonthlyCostFromEmail();
 
         Assert.assertEquals(estimateMonthlyCostFromEmail,
-                estimateMonthlyCostFromGoogleCalculator + "c", "Verification of the estimate price sent by email from Google calculator");
+                estimateMonthlyCostFromGoogleCalculator, "Verification of the estimate price sent by email from Google calculator");
     }
 
 }

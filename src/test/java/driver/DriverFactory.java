@@ -7,8 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
     private final static WebDriver driver;
-    private static String googlePricingTab;
-    private static String yopMailTab;
+    private final static String googlePricingTab;
+    private final static String yopMailTab;
 
     static {
         switch(System.getProperty("browser")) {
