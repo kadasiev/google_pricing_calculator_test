@@ -1,30 +1,17 @@
 package tests;
 
+import model.VirtualMachine;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.GoogleCloudMainPage;
 import pages.GoogleCloudPricingCalculatorPage;
 import pages.YOPMailMainPage;
 import util.BrowserTabsManager;
+import util.VirtualMachineCreator;
 
 public class GooglePricingCalculatorTest extends BaseTest{
     @Test(description = "Verify that the estimate price sent by email from Google calculator is correct")
     public void verifyTheEstimatePriceSentByEmail() {
-        String estimateMonthlyCostFromGoogleCalculator = new GoogleCloudMainPage()
-                .openPage()
-                .searchInGoogleCloud("Google Cloud Platform Pricing Calculator")
-                .openPricingCalculator()
-                .enterNumberOfInstances("4")
-                .selectN1Series()
-                .selectCPU8RUM30Machine()
-                .selectAddGPUCheckbox()
-                .selectNvidia_tesla_v100GPUType()
-                .selectOneGPU()
-                .selectSSD2x375GB()
-                .selectDatacenterLocationFrankfurt()
-                .selectOneYearCommittedOption()
-                .clickAddToEstimateButton()
-                .getTotalEstimateMonthlyCost();
+        VirtualMachine virtualMachine = VirtualMachineCreator.creatVirtualMachine();
 
         BrowserTabsManager.switchToYOPMailTab();
         YOPMailMainPage yopMailMainPage = new YOPMailMainPage();
@@ -43,7 +30,8 @@ public class GooglePricingCalculatorTest extends BaseTest{
                 .getEstimateMonthlyCostFromEmail();
 
         Assert.assertEquals(estimateMonthlyCostFromEmail,
-                estimateMonthlyCostFromGoogleCalculator + "1", "Verification of the estimate price sent by email from Google calculator");
+                virtualMachine.getPrice(),
+                "Verification of the estimate price sent by email from Google calculator");
     }
 
 }
