@@ -17,7 +17,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     @FindBy(xpath = "//md-select[@placeholder='Series']")
     private WebElement seriesField;
 
-    @FindBy(xpath = "//md-option[@id='select_option_221']")
+    @FindBy(xpath = "//md-option[@id='select_option_223']")
     private WebElement n1SeriesOption;
 
     @FindBy(xpath = "//md-select[@placeholder='Instance type']")
@@ -38,7 +38,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     @FindBy(xpath = "//md-select[@placeholder='Number of GPUs']")
     private WebElement numberOfGPUsField;
 
-    @FindBy(xpath = "//md-option[@id='select_option_516']")
+    @FindBy(xpath = "//md-option[@id='select_option_518']")
     private WebElement selectOneGPUOption;
 
     @FindBy(xpath = "//md-select[@placeholder='Local SSD']")
@@ -56,7 +56,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     @FindBy(xpath = "//md-select[@placeholder='Committed usage']")
     private WebElement committedUsage;
 
-    @FindBy(xpath = "//md-option[@id='select_option_137']")
+    @FindBy(xpath = "//md-option[@id='select_option_139']")
     private WebElement oneYearCommittedUsageOption;
 
     @FindBy(xpath = "//button[@class='md-raised md-primary cpc-button md-button md-ink-ripple']")
