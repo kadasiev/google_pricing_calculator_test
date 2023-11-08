@@ -7,8 +7,8 @@ import util.TestListener;
 
 @Listeners({TestListener.class})
 public class BaseTest {
-    @AfterClass
-    public void tearDown() {
-        DriverFactory.getDriver().quit();
-    }
+//    @AfterClass
+//    public void tearDown() {
+//        DriverFactory.getDriver().quit();
+//    }
 }
