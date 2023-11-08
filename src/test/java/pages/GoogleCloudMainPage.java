@@ -29,16 +29,4 @@ public class GoogleCloudMainPage extends BasePage{
         searchField.sendKeys(Keys.RETURN);
         return new GoogleCloudSearchResultPage();
     }
-
-//    public GoogleSignInPage openSignInWindow() {
-//        wait.until(ExpectedConditions.visibilityOf(signInButton)).click();
-//        return new GoogleSignInPage();
-//    }
-//
-//    public void signOut() {
-//        wait.until(ExpectedConditions.visibilityOf(accountSettingButton)).click();
-//        wait.until(ExpectedConditions.visibilityOf(signInButton)).click();
-//
-//    }
-
 }

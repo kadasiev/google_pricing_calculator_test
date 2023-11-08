@@ -83,8 +83,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
         driver.switchTo().defaultContent();
         driver.switchTo().defaultContent();
-//        wait.until(ExpectedConditions.visibilityOf(numberOfInstancesField)).click();
-//        numberOfInstancesField.sendKeys(instanceNumber);
         return this;
     }
 
