@@ -82,7 +82,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         numberOfInstancesField.sendKeys(instanceNumber);
 
         driver.switchTo().defaultContent();
-        driver.switchTo().defaultContent();
         return this;
     }
 
@@ -94,7 +93,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(n1SeriesOption)).click();
 
         driver.switchTo().defaultContent();
-        driver.switchTo().defaultContent();
         return this;
     }
 
@@ -104,8 +102,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
         wait.until(ExpectedConditions.visibilityOf(machineTypeField)).click();
         wait.until(ExpectedConditions.visibilityOf(n1_standard_8Option)).click();
-
-        driver.switchTo().defaultContent();
         driver.switchTo().defaultContent();
         return this;
     }
@@ -115,8 +111,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         driver.switchTo().frame(cloudPricingIframe);
 
         wait.until(ExpectedConditions.visibilityOf(addGPUCheckbox)).click();
-
-        driver.switchTo().defaultContent();
         driver.switchTo().defaultContent();
         return this;
     }
@@ -127,8 +121,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
         wait.until(ExpectedConditions.visibilityOf(gpuTypeField)).click();
         wait.until(ExpectedConditions.visibilityOf(nvidia_tesla_v100GPUOption)).click();
-
-        driver.switchTo().defaultContent();
         driver.switchTo().defaultContent();
         return this;
     }
@@ -139,8 +131,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
         wait.until(ExpectedConditions.visibilityOf(numberOfGPUsField)).click();
         wait.until(ExpectedConditions.visibilityOf(selectOneGPUOption)).click();
-
-        driver.switchTo().defaultContent();
         driver.switchTo().defaultContent();
         return this;
     }
@@ -151,8 +141,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
         wait.until(ExpectedConditions.visibilityOf(localSSDField)).click();
         wait.until(ExpectedConditions.visibilityOf(ssd2x375GBOption)).click();
-
-        driver.switchTo().defaultContent();
         driver.switchTo().defaultContent();
         return this;
     }
@@ -163,8 +151,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
         wait.until(ExpectedConditions.visibilityOf(datacenterLocation)).click();
         wait.until(ExpectedConditions.visibilityOf(locationFrankfurt)).click();
-
-        driver.switchTo().defaultContent();
         driver.switchTo().defaultContent();
         return this;
     }
@@ -175,8 +161,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
         wait.until(ExpectedConditions.visibilityOf(committedUsage)).click();
         wait.until(ExpectedConditions.visibilityOf(oneYearCommittedUsageOption)).click();
-
-        driver.switchTo().defaultContent();
         driver.switchTo().defaultContent();
         return this;
     }
@@ -186,8 +170,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         driver.switchTo().frame(cloudPricingIframe);
 
         addToEstimateButton.click();
-
-        driver.switchTo().defaultContent();
         driver.switchTo().defaultContent();
         return this;
     }
@@ -197,9 +179,8 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         driver.switchTo().frame(cloudPricingIframe);
 
         String totalEstimateMonthlyCost = totalEstimateCost.getText();
+        driver.switchTo().defaultContent();
 
-        driver.switchTo().defaultContent();
-        driver.switchTo().defaultContent();
         totalEstimateMonthlyCost = totalEstimateMonthlyCost.replace("Total Estimated Cost: USD ", "");
         return  totalEstimateMonthlyCost.replace(" per 1 month", "");
     }
@@ -212,7 +193,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(emailField)).sendKeys(email);
         sendEmailButton.click();
 
-        driver.switchTo().defaultContent();
         driver.switchTo().defaultContent();
     }
 }

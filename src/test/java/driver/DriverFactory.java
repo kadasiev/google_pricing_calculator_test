@@ -7,24 +7,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
     private static WebDriver driver;
-    private static String googlePricingTab;
-    private static String yopMailTab;
+    private final static String googlePricingTab;
+    private final static String yopMailTab;
 
     static {
         switch(System.getProperty("browser")) {
             case "Firefox":
                 driver = new FirefoxDriver();
-                yopMailTab = getDriver().getWindowHandle();
-                getDriver().switchTo().newWindow(WindowType.TAB);
-                googlePricingTab = getDriver().getWindowHandle();
                 break;
             case "Chrome":
                 driver = new ChromeDriver();
-                yopMailTab = getDriver().getWindowHandle();
-                getDriver().switchTo().newWindow(WindowType.TAB);
-                googlePricingTab = getDriver().getWindowHandle();
                 break;
         }
+        yopMailTab = getDriver().getWindowHandle();
+        getDriver().switchTo().newWindow(WindowType.TAB);
+        googlePricingTab = getDriver().getWindowHandle();
         driver.manage().window().maximize();
     }
 

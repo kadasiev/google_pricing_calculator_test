@@ -24,8 +24,6 @@ public class YOPMailGeneratorPage extends BasePage{
         driver.switchTo().frame(adIframe);
 
         ((RemoteWebDriver) driver).executeScript("arguments[0].click();", closeAdButton);
-
-        driver.switchTo().defaultContent();
         driver.switchTo().defaultContent();
 
         wait.until(ExpectedConditions.visibilityOfAllElements(generatedEmail));
