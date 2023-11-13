@@ -29,7 +29,7 @@ public class GooglePricingCalculatorTest extends BaseTest{
                 .openYOPMailBox()
                 .getEstimateMonthlyCostFromEmail();
 
-        Assert.assertEquals(estimateMonthlyCostFromEmail + 1,
+        Assert.assertEquals(estimateMonthlyCostFromEmail,
                 virtualMachine.getPrice(),
                 "Verification of the estimate price sent by email from Google calculator");
     }
