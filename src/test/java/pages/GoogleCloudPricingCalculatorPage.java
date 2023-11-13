@@ -102,7 +102,10 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         driver.switchTo().frame(cloudPricingIframe);
 
         wait.until(ExpectedConditions.visibilityOf(machineTypeField)).click();
-        driver.findElement(By.xpath("//md-option[@value='" + type + "']")).click();
+        wait.until(ExpectedConditions
+                .visibilityOfElementLocated(By.xpath("//md-option[@value='" + type + "']")))
+                .click();
+        //driver.findElement(By.xpath("//md-option[@value='" + type + "']")).click();
         driver.switchTo().defaultContent();
         return this;
     }
@@ -121,7 +124,10 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         driver.switchTo().frame(cloudPricingIframe);
 
         wait.until(ExpectedConditions.visibilityOf(gpuTypeField)).click();
-        driver.findElement(By.xpath("//md-option[@value='" + type + "']")).click();
+        wait.until(ExpectedConditions
+                .visibilityOfElementLocated(By.xpath("//md-option[@value='" + type + "']")))
+                .click();
+//        driver.findElement(By.xpath("//md-option[@value='" + type + "']")).click();
         driver.switchTo().defaultContent();
         return this;
     }
