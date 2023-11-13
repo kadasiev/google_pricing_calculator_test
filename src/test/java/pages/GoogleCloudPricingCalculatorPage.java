@@ -102,7 +102,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         driver.switchTo().frame(cloudPricingIframe);
 
         wait.until(ExpectedConditions.visibilityOf(machineTypeField)).click();
-        driver.findElement(By.xpath("//md-option[@value='" + type + "']"));
+        driver.findElement(By.xpath("//md-option[@value='" + type + "']")).click();
         driver.switchTo().defaultContent();
         return this;
     }

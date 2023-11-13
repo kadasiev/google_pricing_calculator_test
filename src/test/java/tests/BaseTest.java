@@ -9,6 +9,6 @@ import util.TestListener;
 public class BaseTest {
     @AfterClass
     public void tearDown() {
-       // DriverFactory.getDriver().quit();
+       DriverFactory.getDriver().quit();
     }
 }
