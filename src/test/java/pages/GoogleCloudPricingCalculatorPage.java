@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -32,8 +33,8 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     @FindBy(xpath = "//md-select[@placeholder='GPU type']")
     private WebElement gpuTypeField;
 
-    @FindBy(xpath = "//md-option[@value='NVIDIA_TESLA_V100']")
-    private WebElement nvidia_tesla_v100GPUOption;
+//    @FindBy(xpath = "//md-option[@value='NVIDIA_TESLA_V100']")
+//    private WebElement nvidia_tesla_v100GPUOption;
 
     @FindBy(xpath = "//md-select[@placeholder='Number of GPUs']")
     private WebElement numberOfGPUsField;
@@ -96,12 +97,12 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         return this;
     }
 
-    public GoogleCloudPricingCalculatorPage selectCPU8RUM30Machine() {
+    public GoogleCloudPricingCalculatorPage selectMachineType(String type) {
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(googleIframe));
         driver.switchTo().frame(cloudPricingIframe);
 
         wait.until(ExpectedConditions.visibilityOf(machineTypeField)).click();
-        wait.until(ExpectedConditions.visibilityOf(n1_standard_8Option)).click();
+        driver.findElement(By.xpath("//md-option[@value='" + type + "']"));
         driver.switchTo().defaultContent();
         return this;
     }
@@ -115,12 +116,12 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         return this;
     }
 
-    public GoogleCloudPricingCalculatorPage selectNvidia_tesla_v100GPUType() {
+    public GoogleCloudPricingCalculatorPage selectGPUType(String type) {
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(googleIframe));
         driver.switchTo().frame(cloudPricingIframe);
 
         wait.until(ExpectedConditions.visibilityOf(gpuTypeField)).click();
-        wait.until(ExpectedConditions.visibilityOf(nvidia_tesla_v100GPUOption)).click();
+        driver.findElement(By.xpath("//md-option[@value='" + type + "']")).click();
         driver.switchTo().defaultContent();
         return this;
     }
