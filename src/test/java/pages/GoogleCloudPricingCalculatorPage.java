@@ -33,9 +33,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     @FindBy(xpath = "//md-select[@placeholder='GPU type']")
     private WebElement gpuTypeField;
 
-//    @FindBy(xpath = "//md-option[@value='NVIDIA_TESLA_V100']")
-//    private WebElement nvidia_tesla_v100GPUOption;
-
     @FindBy(xpath = "//md-select[@placeholder='Number of GPUs']")
     private WebElement numberOfGPUsField;
 
@@ -92,7 +89,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
         wait.until(ExpectedConditions.visibilityOf(seriesField)).click();
         wait.until(ExpectedConditions.visibilityOf(n1SeriesOption)).click();
-
         driver.switchTo().defaultContent();
         return this;
     }
@@ -105,7 +101,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         wait.until(ExpectedConditions
                 .visibilityOfElementLocated(By.xpath("//md-option[@value='" + type + "']")))
                 .click();
-        //driver.findElement(By.xpath("//md-option[@value='" + type + "']")).click();
         driver.switchTo().defaultContent();
         return this;
     }
@@ -127,7 +122,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         wait.until(ExpectedConditions
                 .visibilityOfElementLocated(By.xpath("//md-option[@value='" + type + "']")))
                 .click();
-//        driver.findElement(By.xpath("//md-option[@value='" + type + "']")).click();
         driver.switchTo().defaultContent();
         return this;
     }
@@ -199,7 +193,6 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         emailEstimateButton.click();
         wait.until(ExpectedConditions.visibilityOf(emailField)).sendKeys(email);
         sendEmailButton.click();
-
         driver.switchTo().defaultContent();
     }
 }
