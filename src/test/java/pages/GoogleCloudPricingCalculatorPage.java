@@ -42,7 +42,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     @FindBy(xpath = "//md-select[@placeholder='Local SSD']")
     private WebElement localSSDField;
 
-    @FindBy(xpath = "//md-option[@id='select_option_491']")
+    @FindBy(xpath = "//md-option[@id='select_option_494']")
     private WebElement ssd2x375GBOption;
 
     @FindBy(xpath = "//md-select[@placeholder='Datacenter location']")
