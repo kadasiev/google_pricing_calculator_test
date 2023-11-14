@@ -19,9 +19,9 @@ public class DriverFactory {
                 driver = new ChromeDriver();
                 break;
         }
-        yopMailTab = getDriver().getWindowHandle();
-        getDriver().switchTo().newWindow(WindowType.TAB);
-        googlePricingTab = getDriver().getWindowHandle();
+        yopMailTab = driver.getWindowHandle();
+        driver.switchTo().newWindow(WindowType.TAB);
+        googlePricingTab = driver.getWindowHandle();
         driver.manage().window().maximize();
     }
 
