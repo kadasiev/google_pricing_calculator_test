@@ -21,10 +21,11 @@ public class VirtualMachine {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof VirtualMachine)) return false;
+        if(this == o) return true;
+        if(o == null) return false;
+        if(this.getClass() != o.getClass()) return false;
         VirtualMachine virtualMachine = (VirtualMachine) o;
-        return Objects.equals(price, virtualMachine.price);
+        return Objects.equals(this.price, virtualMachine.price);
     }
 
     @Override
