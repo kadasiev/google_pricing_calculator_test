@@ -1,28 +1,21 @@
 package pages;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import static element.Element.xpath;
 
-public class YOPMailMainPage extends BasePage{
-    @FindBy(xpath = "//div/div/a[@href='email-generator']")
-    private WebElement randomEmailGeneratorButton;
+import element.Element;
 
-    @FindBy(xpath = "//button[@title='Check Inbox @yopmail.com']")
-    private WebElement openMailboxButton;
+public class YOPMailMainPage {
 
-    public YOPMailMainPage openPage() {
-        driver.get("https://yopmail.com/");
-        return this;
-    }
+    Element randomEmailGeneratorButton = xpath("//div/div/a[@href='email-generator']");
+    Element openMailboxButton = xpath("//button[@title='Check Inbox @yopmail.com']");
 
     public YOPMailGeneratorPage generateNewEmailAddress() {
-        wait.until(ExpectedConditions.visibilityOf(randomEmailGeneratorButton)).click();
+        randomEmailGeneratorButton.click();
         return new YOPMailGeneratorPage();
     }
 
     public YOPMailboxPage openYOPMailBox() {
-        wait.until(ExpectedConditions.visibilityOf(openMailboxButton)).click();
+       openMailboxButton.click();
         return new YOPMailboxPage();
     }
 }

@@ -1,13 +1,12 @@
 package util;
 
 import model.VirtualMachine;
-import pages.GoogleCloudMainPage;
+import pages.GoogleCloudSearchResultPage;
 
 public class VirtualMachineCreator {
+
     public static VirtualMachine creatVirtualMachine() {
-        String virtualMachinePrice = new GoogleCloudMainPage()
-                .openPage()
-                .searchInGoogleCloud("Google Cloud Platform Pricing Calculator")
+        String virtualMachinePrice = new GoogleCloudSearchResultPage()
                 .openPricingCalculator()
                 .enterNumberOfInstances(TestDataReader.getTestData("numberOfInstances"))
                 .selectN1Series()

@@ -1,32 +1,25 @@
 package pages;
 
-import org.openqa.selenium.WebElement;
+import static driver.Driver.switchToDefaultContent;
+import static driver.DriverFactory.getDriver;
+import static element.Element.xpath;
+
+import element.Element;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import java.util.List;
 
-public class YOPMailGeneratorPage extends BasePage{
-    @FindBy(xpath = "//iframe[@id='aswift_6']")
-    private WebElement pageIframe;
+public class YOPMailGeneratorPage {
 
-    @FindBy(xpath = "//div/iframe[@id='ad_iframe']")
-    private WebElement adIframe;
-
-    @FindBy(xpath = "//div[@id='dismiss-button']")
-    private WebElement closeAdButton;
-
-    @FindBy(xpath = "//span[@class='genytxt']")
-    private List<WebElement> generatedEmail;
+    Element pageIframe = xpath("//iframe[@id='aswift_6']");
+    Element adIframe = xpath("//div/iframe[@id='ad_iframe']");
+    Element closeAdButton = xpath("//div[@id='dismiss-button']");
+    Element generatedEmail = xpath("//span[@class='genytxt']");
 
     public String getGeneratedEmailAddress() {
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(pageIframe));
-        driver.switchTo().frame(adIframe);
-
-        ((RemoteWebDriver) driver).executeScript("arguments[0].click();", closeAdButton);
-        driver.switchTo().defaultContent();
-
-        wait.until(ExpectedConditions.visibilityOfAllElements(generatedEmail));
+        pageIframe.switchToFrame();
+        adIframe.switchToFrame();
+        ((RemoteWebDriver) getDriver()).executeScript("arguments[0].click();",
+            closeAdButton.waitForVisibility());
+        switchToDefaultContent();
         return generatedEmail.get(0).getText() + "@" + generatedEmail.get(1).getText();
     }
 }
